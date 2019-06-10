@@ -10,7 +10,8 @@ import speech_recognition as sr
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[len(voices)-1].id)
+print(voices[1].id)
+engine.setProperty('voices', voices[1].id)
 
 def speak(audio):
     print('Computer: ' + audio)
@@ -30,7 +31,7 @@ def greetMe():
 
 greetMe()
 
-speak('Hello Sir, I am syndione')
+speak('Hello Sir, I am (_your bot_name_)')
 speak('How may I help you?')
 
 
@@ -63,11 +64,11 @@ if __name__ == '__main__':
         elif 'open google' in query:
             webbrowser.open('www.google.com') 
 
-        elif 'nothing' in query or 'abort' in query or 'stop' in query:
+        elif 'abort' in query:
             sys.exit()
                                     
         elif 'play music' in query:
-            music_folder = Your_mu
+            music_folder = Your_music_path_or_location
             music = [music1, music2, music3, music4, music5]
             random_music = music_folder + random.choice(music) + '.mp3'
             os.system(random_music)
